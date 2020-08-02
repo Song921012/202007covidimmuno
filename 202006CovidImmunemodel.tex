@@ -1,0 +1,230 @@
+
+%\documentclass[preprint,authoryear,11.5pt,sort&compress,square]{elsarticle}
+\documentclass[preprint,11pt,sort&compress,square]{elsarticle}
+%\documentclass[preprint,11.5pt,authoryear]{elsarticle}
+\usepackage{lineno}
+\usepackage{amssymb}
+\usepackage{amssymb,amsmath}
+\usepackage{latexsym}
+\usepackage{graphics,graphicx}
+\textheight 230mm
+\textwidth 165mm
+\oddsidemargin=0mm
+\headsep -1cm
+\evensidemargin=0mm
+%\baselineskip 38pt
+
+%\textheight 230mm
+%\textwidth 175mm
+%\oddsidemargin=-7mm
+%\topmargin=0mm
+%\bottommargin=0mm
+\renewcommand{\baselinestretch}{1.2}
+\makeatletter
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{Remark}{Remark}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{Proof}{pf}
+\usepackage{multirow}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage{amsmath}
+\newcommand\diff{\,{\mathrm d}}
+\numberwithin{equation}{section}
+\usepackage{amssymb}
+\usepackage{setspace}%使用间距宏包
+\usepackage{colortbl}  % \extrarowheight用到
+\journal{Journal of Differential Equations }
+\renewcommand*\figurename{Fig.}
+\usepackage{comment}
+
+\bibliographystyle{abbrv}
+\begin{document}
+\linenumbers
+\begin{frontmatter}
+
+	\title{Modeling the theoretical framework of Covid-19 immunology}
+	\begin{comment}
+	\tnotetext[mytitlenote]{Research partially supported by the China Scholarship Council (PS), NSF grant DMS-1411476 (YL), NSFC grants  11631012 and 11571273 (YX), and   National Mega-project of Science Research  2017ZX10201101-002-002 (YX)}
+
+	\author[XiaoSongaddress]{Shuangshuang Yin}
+
+
+
+	\author[Louaddress2]{Yuan Lou}
+
+	\ead{lou@math.ohio-state.edu}
+
+	\author[Wuaddress]{Jianhong Wu}
+
+	\ead{wu@math.ohio-state.edu}
+
+
+	\author[XiaoSongaddress]{Yanni Xiao\corref{mycorrespondingauthor}}
+	\cortext[mycorrespondingauthor]{Corresponding author}
+	\ead{yxiao@mail.xjtu.edu.cn}
+
+	\author[XiaoSongaddress]{Pengfei Song}
+	\ead{song921012@stu.xjtu.edu.cn}
+
+	\address[XiaoSongaddress]{School of Mathematics and Statistics, Xi'an Jiaotong University, Xi'an, ShaanXi, 710049, PRC}
+	%\address[Louaddress1]{Institute for Mathematical Sciences, Renmin University of China, Beijing, 100872, PRC}
+	\address[Louaddress2]{Department of Mathematics, Ohio State University, Columbus, OH 43210, USA}
+
+	\address[Wuaddress]{Department of Mathematics, York University, Canada}
+	\end{comment}
+	\begin{abstract}
+
+	\end{abstract}
+
+	\begin{keyword}
+
+		\MSC[2010] 35J55 \sep  35B32
+	\end{keyword}
+
+\end{frontmatter}
+
+\linenumbers
+\section{Within host dynamic model}
+Elements considered:
+
+1. Infection dynamics
+\begin{itemize}
+	\item Target cells:        suspected ($S$) and infected ($I$) cells;
+	\item Virus:    $v$.
+\end{itemize}
+
+
+
+2. Innate immunity
+\begin{itemize}
+	\item Macrophage and DC cells:    $M$;
+\end{itemize}
+
+3. Humoral immunity
+\begin{itemize}
+	\item B cells: $B_{n},B_{a},B_{m}$ naive, activated, memory;
+	\item Plasma cells: $P$
+	\item Short-term and long-term antibodies: $A_{S}$, $A_{l}$.
+\end{itemize}
+
+4. Cellular immunity
+\begin{itemize}
+	\item CD8 T cells: $X_{n},X_{a},X_{m}$ naive, actived, memory;
+	\item CD4 T cells: $Y_{n},Y_{a},Y_{m}$ naive, actived, memory;
+	\item Th1 and Th2 cells: $T_{2},T_{1}$.
+\end{itemize}
+
+\subsection{Virus dynamics}
+The following equation \eqref{virusdynamics} describes the dynamics of target cells ($s$),infected target cells($i$) and virus ($v$).
+
+
+\noindent Target cells ($S$)
+\begin{itemize}
+	\item Growth: target cells grow with an imposed carrying capacity;
+	\item Suspected ($S$) to infected($I$): Virions ($V$) bind to target cells ($S$) to infect them;
+\end{itemize}
+
+\noindent Infected cells ($I$)
+\begin{itemize}
+	\item Suspected ($S$) to infected($I$): Virions ($V$) bind to target cells ($S$) to infect them;
+	\item Decay: death;
+	\item Killed by binding to activated CD8 T cells($X_{a}$).
+\end{itemize}
+
+\noindent Virus (V)
+\begin{itemize}
+	\item infected cells ($i$) produce virions;
+	\item Decay: death;
+	\item Killed by M cells, short-term and long-term antibodies.
+\end{itemize}
+
+\begin{equation}\label{virusdynamics}
+	\left\{
+	\begin{aligned}
+		% suspected infected target cells and virus
+		 & \frac{{\rm d } S}{{\rm dt}}=\lambda_{s}-\beta S V-d_{S}S, \\
+		 & \frac{{\rm d } I}{{\rm dt}}=\beta S V-k_{xi}X_{a}I-d_{I}I,                          \\
+		 & \frac{{\rm d } V}{{\rm dt}}=\delta I-\beta SV-k_{asv}A_{s}V-k_{alv}A_{l}V-k_{mv}MV-d_{v}V.                          \\
+	\end{aligned}
+	\right.
+\end{equation}
+
+I can’t remember how to go their.
+
+I didn’t know where it came from.
+
+You are 
+
+Immunity is mediated by the compartments resistant cells ($R$), M cells ($M$), antibodies ($A_{s}$(IgG,IgA) , $A_{l}$(IgM)) and activated CD8+ T cells ($x_{a}$), the dynamics of which will be described shortly.
+
+\subsection{Innate immunity}
+
+
+
+M cells($M$) is stimulated by infected cells ($T_{1}$), and decay at the rate $d_{m}$.
+
+\begin{equation}\label{innateimmunity}
+	%\left\{
+	\begin{aligned}
+		 & \frac{{\rm d } M}{{\rm dt}}=\lambda\left(1+\frac{k_{m}T_{1}}{T_{1}+K_{m}}\right)-d_{m}M.   \\
+	\end{aligned}
+	%\right.
+\end{equation}
+
+\subsection{Humoral adaptive immunity}
+
+The humoral adaptive immune response is mediated by short time antibodies ($A_{s}$, IgG, IgA) and long time antibodies ($A_{l}$, IgM), which bind to virions and neutralise them, rendering them non-infectious. Naive B cells ($B_{n}$) are stimulated by virus and become activated B cells ($B_{a}$) to proliferate and differentiate into plasma cells ($P$) with stimulation of Th1 cells, which produce short and long antibodies ($A_{S}, A_{l}$,).  Activated B cells also differentiate into memory B cells. \eqref{humoralimmunity} describes these processes.
+\begin{equation}\label{humoralimmunity}
+	\left\{
+	\begin{aligned}
+		 & \frac{{\rm d } B_{n}}{{\rm dt}}=\lambda_{bn}-\frac{k_{bn}qMVT_{2}}{qMVT_{2}+K_{bn}}B_{n}-d_{bn}B_{n},\\
+		 & \frac{{\rm d } B_{a}}{{\rm dt}}=\frac{k_{bn}qMVT_{2}}{qMVT_{2}+K_{bn}}B_{n}+\frac{k_{ba}qMV}{qMV+K_{ba}}B_{a}+\frac{q_{bm}k_{bm}qMV}{qMV+K_{bm}}B_{m}-\rho_{b}B_{a}-\rho_{bp}B_{a}-d_{ba}B_{a}, \\
+		 & \frac{{\rm d } B_{m}}{{\rm dt}}=\rho_{b} B_{a}-\frac{k_{bm}qMV}{qMV+K_{bm}}B_{m}-d_{bm}B_{m},                                                                                                                       \\
+		 & \frac{{\rm d } P}{{\rm dt}}=\rho_{bp}B_{a}-d_{p}P,\\
+		 & \frac{{\rm d } A_{s}}{{\rm dt}}=\delta_{as}P-d_{as}A_{s},                                                                                                                                                         \\
+		 & \frac{{\rm d } A_{l}}{{\rm dt}}=\delta_{al}P-d_{al}A_{l}.                                                                                                                                                         \\
+	\end{aligned}
+	\right.
+\end{equation}
+
+
+\subsection{Cellular adaptive immune response}
+The cellular adaptive immune response is mediated by effector CD8 T cells ($X_{a}$) and effector CD4 T cells ($Y_{a}$). Virus stimulate the differentiation of effector  T cells ($X_{a}, Y_{a}$) from their naive counterparts ($X_{n}, Y_{n}$); effector CD8+ T cells then increase the death rate of infected cells. Some effector  T cells ($X_{a}, Y_{a}$) remain after a primary infection as memory  T cells ($X_{m},Y_{m}$). Effector CD4 T cells ($Y_{a}$) also differentiate to Th1 cells ($T_{1}$) and Th2 cells ($T_{2}$).
+\eqref{cellularimmunity} describes these processes.
+
+
+\begin{equation}\label{cellularimmunity}
+	\left\{
+	\begin{aligned}
+		 & \frac{{\rm d } X_{n}}{{\rm dt}}=\lambda_{xn}-\frac{k_{xn}qMVY_{a}}{qMVY_{a}+K_{xn}}X_{n}-d_{xn}X_{n},                                                                                       \\
+		 & \frac{{\rm d } X_{a}}{{\rm dt}}=\frac{k_{xn}qMVY_{a}}{qMVY_{a}+K_{xn}}X_{n}+\frac{k_{xa}qMV}{qMV+K_{xa}}X_{a}+\frac{q_{xm}k_{xm}qMV}{qMV+K_{xm}}M-\rho_{x}X_{a}-d_{xa}X_{a},                    \\
+		 & \frac{{\rm d } X_{m}}{{\rm dt}}=\rho_{x} X_{a}-\frac{k_{xm}qMV}{qMV+K_{xm}}X_{m}-d_{xm}X_{m},                                                       \\
+		 & \frac{{\rm d } Y_{n}}{{\rm dt}}=\lambda_{yn}-\frac{k_{yn}qMV}{qMV+K_{yn}}Y_{n}-d_{yn}Y_{n},                                                                                       \\
+		 & \frac{{\rm d } Y_{a}}{{\rm dt}}=\frac{k_{yn}qMV}{qMV+K_{yn}}Y_{n}+\frac{k_{ya}qMV}{qMV+K_{ya}}Y_{a}+\frac{q_{ym}k_{ym}qMV}{qMV+K_{ym}}M-\rho_{yt1}Y_{a}-\rho_{yt2}Y_{a}-d_{ya}Y_{a}, \\
+		 & \frac{{\rm d } Y_{m}}{{\rm dt}}=\rho_{y} Y_{a}-\frac{k_{ym}qMV}{qMV+K_{ym}}Y_{m}-d_{ym}Y_{m},                                                       \\
+		 & \frac{{\rm d } T_{1}}{{\rm dt}}=\rho_{yt1}Y_{a}-d_{t1}T_{1},                                                                                                                \\
+		 & \frac{{\rm d } T_{2}}{{\rm dt}}=\rho_{yt2}Y_{a}-d_{t2}T_{2}.                                                                                                                    \\
+	\end{aligned}
+	\right.
+\end{equation}
+
+\section{Basic reproduction number}
+
+$$\mathcal{R}_{0}=\frac{\delta\beta\lambda_{s}}{(d_{S}+d_{v}d_{s})d_{I}}$$
+
+\bigskip
+\noindent{\bf{Acknowledgement.}}
+
+
+
+
+\bibliography{references}
+
+
+\end{document}
+
+\endinput
+
