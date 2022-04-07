@@ -6,13 +6,13 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'MathEpiDeepLearning',
+  title: 'MathEpiDeepLearning', //网站名字
   tagline: 'Mathematical Epidemiology and Deep Learning',
-  url: 'https://song921012.github.io/',
-  baseUrl: '/MytestRepo/',
+  url: 'https://song921012.github.io/', // 基准网站
+  baseUrl: '/MytestRepo/', //网站子名字
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/mathepia.ico',
+  favicon: 'img/mathepia.ico', // 浏览器tab网站logo
   organizationName: 'Song921012', // Usually your GitHub org/user name.
   projectName: 'MytestRepo', // Usually your repo name.
 
@@ -24,13 +24,13 @@ const config = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
-          editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          editUrl: 'https://github.com/Song921012/MytestRepo',
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/Song921012/MytestRepo',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -43,10 +43,10 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'My Site',
+        title: 'MathEpiDeepLearning',
         logo: {
-          alt: 'My Site Logo',
-          src: 'img/logo.svg',
+          alt: 'Mathepia Logo',
+          src: 'img/avatar.jpg',
         },
         items: [
           {
@@ -79,7 +79,7 @@ const config = {
             title: 'Community',
             items: [
               {
-                label: 'Stack Overflow',
+                label: 'Mathepia',
                 href: 'https://stackoverflow.com/questions/tagged/docusaurus',
               },
               {
